@@ -1,1 +1,48 @@
 WALDO 10.10.10.87
+
+SCAN_______________________________________
+Armitage___________________________________
+
+msf auxiliary(scanner/portscan/tcp) > run -j
+[*] Auxiliary module running as background job 4.
+[+] 10.10.10.87:          - 10.10.10.87:22 - TCP OPEN
+[+] 10.10.10.87:          - 10.10.10.87:80 - TCP OPEN
+[*] Scanned 1 of 1 hosts (100% complete)
+
+SSH_VERSION_SCANNER
+[*] Auxiliary module running as background job 5.
+[+] 10.10.10.87:22        - SSH server version: SSH-2.0-OpenSSH_7.5 ( service.version=7.5 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:7.5 service.protocol=ssh fingerprint_db=ssh.banner )
+[*] Scanned 1 of 1 hosts (100% complete)
+
+HTTP_VERSION_SCANNER
+[*] Auxiliary module running as background job 6.
+[+] 10.10.10.87:80 nginx/1.12.2 ( Powered by PHP/7.1.16, 302-/list.html )
+[*] Scanned 1 of 1 hosts (100% complete)
+
+_________________________________________________
+ENUMERATING HTTP
+_________________________________________________
+List manager - Dodawanie / Usuwanie list - BURP (Sprawdzic)
+Help - ?
+___________________________________________________________________
+List manager - Dodawanie 
+
+BURP: Naciśnięcie przycisku:
+
+POST
+URL /fileWrite.php
+...
+listnum=1&data=abc
+...
+
+
+BURP: Kolejna ramka:
+POST
+URL /dirRead.php
+
+...
+path=./../../../../../ <-- Można wstrzyknąć własną ścieżkę!!
+...
+
+_______________________________________________________
+
