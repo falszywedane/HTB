@@ -44,5 +44,27 @@ URL /dirRead.php
 path=./../../../../../ <-- Można wstrzyknąć własną ścieżkę!!
 ...
 
+Filtrowany jest ciąg ../ -> Możliwość ominięcia filtrowania przy zapisie ....//
 _______________________________________________________
+
+Dostęp do plików w .ssh  --->> .monitor
+
+Po ściągnięciu pliku trzeba go przeformatować (vim  :%s/ ... - usuwanie zn. spec.)
+____________________________________________________________________
+
+Dostęp do monitor@10.10.10.87 niemożliwy
+Możliwe wejście do nobody@10.10.10.87
+
+user.txt = "32768bcd7513275e085fd4e7b63e9d24"
+______________________________________________________________________
+Użycie ssh z plikiem .monitor z poziomu użytkownika nobody daje dostep do monitor@waldo
+RESTRICTED BASH
+Ucieczka możliwa - poprzez użycie ssh z parametrem -t "bash --noprofile"
+________________________________________________________________________
+linux capabilities! (bezpieczniejsze SUID?)
+komenda getcap wywołana dla całego systemu daje dwa wyniki, z czego jeden to binarka do wyświetlania zawartości plików...
+/usr/bin/tac /root/root.txt
+root.txt = "8fb67c84418be6e45fbd348fd4584f6c"
+ 
+
 
