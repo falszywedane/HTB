@@ -1,0 +1,113 @@
+FROLIC 10.10.10.111
+____________________________________________________________________________________________
+SKAN - Armitage
+
+[+] 10.10.10.111:         - 10.10.10.111:22 - TCP OPEN
+[+] 10.10.10.111:         - 10.10.10.111:139 - TCP OPEN
+[+] 10.10.10.111:         - 10.10.10.111:445 - TCP OPEN
+[+] 10.10.10.111:         - 10.10.10.111:9999 - TCP OPEN
+
+[+] 10.10.10.111:22       - SSH server version: SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4 ( service.version=7.2p2 openssh.comment=Ubuntu-4ubuntu2.4 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:7.2p2 os.vendor=Ubuntu os.device=General os.family=Linux os.product=Linux os.certainty=0.75 os.cpe23=cpe:/o:canonical:ubuntu_linux:- service.protocol=ssh fingerprint_db=ssh.banner )
+
+ 10.10.10.111:445      - Host could not be identified: Windows 6.1 (Samba 4.3.11-Ubuntu)
+
+_____________________________________________________________________________________________
+SPRAWDZENIE SMB
+
+smbmap -H 10.10.10.111
+[+] Finding open SMB ports....
+[+] Guest SMB session established on 10.10.10.111...
+[+] IP: 10.10.10.111:445	Name: 10.10.10.111                                      
+	Disk                                                  	Permissions
+	----                                                  	-----------
+	print$                                            	NO ACCESS
+	IPC$                                              	NO ACCESS
+_____________________________________________________________________________________________
+SPRAWDZENIE PORTU :9999
+
+nmap -sVC -p9999 10.10.10.111
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-12-03 06:37 EST
+Nmap scan report for 10.10.10.111
+Host is up (0.032s latency).
+
+PORT     STATE SERVICE VERSION
+9999/tcp open  http    nginx 1.10.3 (Ubuntu)
+|_http-server-header: nginx/1.10.3 (Ubuntu)
+|_http-title: Welcome to nginx!
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+______________________________________________________________________________________________
+SPRAWDZENIE PORTU :139
+
+nmap -sVC -p139 10.10.10.111
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-12-03 06:39 EST
+Nmap scan report for 10.10.10.111
+Host is up (0.031s latency).
+
+PORT    STATE SERVICE     VERSION
+139/tcp open  netbios-ssn Samba smbd 4.3.11-Ubuntu (workgroup: WORKGROUP)
+Service Info: Host: FROLIC
+
+Host script results:
+|_clock-skew: mean: -1h49m59s, deviation: 3h10m31s, median: 0s
+|_nbstat: NetBIOS name: FROLIC, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.3.11-Ubuntu)
+|   Computer name: frolic
+|   NetBIOS computer name: FROLIC\x00
+|   Domain name: \x00
+|   FQDN: frolic
+|_  System time: 2018-12-03T17:09:48+05:30
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2018-12-03 06:39:48
+|_  start_date: N/A
+_______________________________________________________________________________________________
+SPRAWDZENIE PORTALU HTTP
+
+Strona główna informująca o zainstalowaniu ngix
+m.in.: "... Thank you for using nginx. http://forlic.htb:1880 ..."
+_______________________________________________________________________________________________
+PRÓBA WEJŚCIA NA PORT 1880
+Port jest otwarty, dostępny z poziomu przeglądarki ( Strona logowania Node Red)
+Wg. strony nodered: "Node-RED is a programming tool for wiring together hardware devices..."
+NMAP:
+ nmap -sVC -p1880 10.10.10.111
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-12-03 06:44 EST
+Nmap scan report for 10.10.10.111
+Host is up (0.031s latency).
+
+PORT     STATE SERVICE VERSION
+1880/tcp open  http    Node.js (Express middleware)
+|_http-title: Node-RED
+_______________________________________________________________________________________________
+PEŁEN SKAN NMAP [TCP]
+Nic więcej
+_______________________________________________________________________________________________
+SKAN DIR_SCANNER na :1880
+
+[+] Found http://10.10.10.111:1880/icons/ 404 (10.10.10.111)        unauthorized
+[+] Found http://10.10.10.111:1880/settings/ 404 (10.10.10.111)     unauthorized
+[*] Scanned 1 of 1 hosts (100% complete)
+
+SKAN DIR_SCANNER na :9999
+
+[+] Found http://10.10.10.111:9999/admin/ 404 (10.10.10.111)
+[+] Found http://10.10.10.111:9999/backup/ 404 (10.10.10.111)
+[+] Found http://10.10.10.111:9999/dev/ 404 (10.10.10.111)
+[+] Found http://10.10.10.111:9999/test/ 200 (10.10.10.111)
+
+SKAN FILES_DIR na :1880
+
+SKAN FILES_DIR na :9999
+
+______________________________________________________________________________________________
+
+
+
