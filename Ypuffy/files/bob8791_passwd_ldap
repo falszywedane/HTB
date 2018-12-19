@@ -1,0 +1,28 @@
+# extended LDIF
+#
+# LDAPv3
+# base <uid=bob8791,ou=passwd,dc=hackthebox,dc=htb> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# bob8791, passwd, hackthebox.htb
+dn: uid=bob8791,ou=passwd,dc=hackthebox,dc=htb
+uid: bob8791
+cn: Bob
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+userPassword:: e0JTREFVVEh9Ym9iODc5MQ==
+uidNumber: 5001
+gidNumber: 5001
+gecos: Bob
+homeDirectory: /home/bob8791
+loginShell: /bin/ksh
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
