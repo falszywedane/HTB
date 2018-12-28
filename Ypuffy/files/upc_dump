@@ -1,0 +1,767 @@
+Assuming the OS is: bsd
+Starting unix-privesc-check v1.6-svn- ( http://pentestmonkey.net/tools/unix-privesc-check )
+
+This script checks file permissions and other settings that could allow
+local users to escalate privileges.
+
+Use of this script is only permitted on systems which you have been granted
+legal permission to perform a security assessment of.  Apart from this 
+condition the GPL v2 applies.
+
+Search the output below for the word 'WARNING'.  If you don't see it then
+this script didn't find any problems.
+
+
+############################################
+Recording hostname
+############################################
+ypuffy.hackthebox.htb
+
+############################################
+Recording uname
+############################################
+OpenBSD ypuffy.hackthebox.htb 6.3 GENERIC#100 amd64
+
+############################################
+Recording Interface IP addresses
+############################################
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 32768
+        index 3 priority 0 llprio 3
+        groups: lo
+        inet6 ::1 prefixlen 128
+        inet6 fe80::1%lo0 prefixlen 64 scopeid 0x3
+        inet 127.0.0.1 netmask 0xff000000
+em0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+        lladdr 00:50:56:b9:f9:df
+        index 1 priority 0 llprio 3
+        groups: egress
+        media: Ethernet autoselect (1000baseT full-duplex,master)
+        status: active
+        inet 10.10.10.107 netmask 0xffffff00 broadcast 10.10.10.255
+enc0: flags=0<>
+        index 2 priority 0 llprio 3
+        groups: enc
+        status: active
+pflog0: flags=141<UP,RUNNING,PROMISC> mtu 33136
+        index 4 priority 0 llprio 3
+        groups: pflog
+
+############################################
+Checking if external authentication is allowed in /etc/passwd
+############################################
+[UPC008] WARNING: /etc/passwd allows external authentcation:
++:*:0:0:::
+
+############################################
+Checking nsswitch.conf/netsvc.conf for addition authentication methods
+############################################
+ERROR: File /etc/nsswitch.conf isn't readable.  Skipping checks.
+
+############################################
+Checking for writable config files
+############################################
+    Checking if anyone except root can change /etc/passwd
+    Checking if anyone except root can change /etc/group
+    Checking if anyone except root can change /etc/master.passwd
+    Checking if anyone except root can change /etc/fstab
+    Checking if anyone except root can change /etc/master.passwd
+
+############################################
+Checking if /etc/master.passwd is readable
+############################################
+    Checking if anyone except root can read file /etc/master.passwd
+
+############################################
+Checking if /etc/master.passwd is writable
+############################################
+    Checking if anyone except root can change /etc/master.passwd
+
+############################################
+Checking if /etc/passwd is writable
+############################################
+    Checking if anyone except root can change /etc/passwd
+
+############################################
+Checking for password hashes in /etc/passwd
+############################################
+No password hashes found in /etc/passwd
+
+############################################
+Checking account settings
+############################################
+File /etc/master.passwd isn't readable.  Skipping some checks.
+
+############################################
+Checking library directories from /etc/ld.so.conf
+############################################
+File /etc/ld.so.conf not present.  Skipping checks.
+
+############################################
+Checking sudo configuration
+############################################
+File /etc/sudoers not present.  Skipping checks.
+
+############################################
+Checking permissions on swap file(s)
+############################################
+swapon: unknown option -- s
+usage: swapon -a | path
+
+############################################
+Checking programs run from inittab
+############################################
+File /etc/inittab not present.  Skipping checks.
+
+############################################
+Checking postgres trust relationships
+############################################
+No postgres trusts detected
+
+############################################
+Checking permissions on device files for mounted partitions
+############################################
+
+############################################
+Checking cron job programs aren't writable (/etc/crontab)
+############################################
+File /etc/crontab not present.  Skipping checks.
+
+############################################
+Checking cron job programs aren't writable (/var/spool/cron/crontabs)
+############################################
+Directory /var/spool/cron/crontabs is not present.  Skipping checks.
+
+############################################
+Checking cron job programs aren't writable (/var/spool/cron/tabs)
+############################################
+Directory /var/spool/cron/tabs is not present.  Skipping checks.
+
+############################################
+Checking inetd programs aren't writable
+############################################
+File /etc/inetd.conf not present.  Skipping checks.
+
+############################################
+Checking xinetd programs aren't writeable
+############################################
+Directory /etc/xinetd.d not present.  Skipping checks.
+
+############################################
+Checking home directories aren't writable
+############################################
+Processing /etc/passwd line: root:*:0:0:Charlie &:/root:/bin/ksh
+    Checking if anyone except root can change /root
+Processing /etc/passwd line: daemon:*:1:1:The devil himself:/root:/sbin/nologin
+    Skipping user daemon.  They don't have a shell.
+Processing /etc/passwd line: operator:*:2:5:System &:/operator:/sbin/nologin
+    Skipping user operator.  They don't have a shell.
+Processing /etc/passwd line: bin:*:3:7:Binaries Commands and Source:/:/sbin/nologin
+    Skipping user bin.  They don't have a shell.
+Processing /etc/passwd line: build:*:21:21:base and xenocara build:/var/empty:/bin/ksh
+    Checking if anyone except build can change /var/empty
+Processing /etc/passwd line: sshd:*:27:27:sshd privsep:/var/empty:/sbin/nologin
+    Skipping user sshd.  They don't have a shell.
+Processing /etc/passwd line: _portmap:*:28:28:portmap:/var/empty:/sbin/nologin
+    Skipping user _portmap.  They don't have a shell.
+Processing /etc/passwd line: _identd:*:29:29:identd:/var/empty:/sbin/nologin
+    Skipping user _identd.  They don't have a shell.
+Processing /etc/passwd line: _rstatd:*:30:30:rpc.rstatd:/var/empty:/sbin/nologin
+    Skipping user _rstatd.  They don't have a shell.
+Processing /etc/passwd line: _rusersd:*:32:32:rpc.rusersd:/var/empty:/sbin/nologin
+    Skipping user _rusersd.  They don't have a shell.
+Processing /etc/passwd line: _fingerd:*:33:33:fingerd:/var/empty:/sbin/nologin
+    Skipping user _fingerd.  They don't have a shell.
+Processing /etc/passwd line: _x11:*:35:35:X Server:/var/empty:/sbin/nologin
+    Skipping user _x11.  They don't have a shell.
+Processing /etc/passwd line: _switchd:*:49:49:Switch Daemon:/var/empty:/sbin/nologin
+    Skipping user _switchd.  They don't have a shell.
+Processing /etc/passwd line: _traceroute:*:50:50:traceroute privdrop user:/var/empty:/sbin/nologin
+    Skipping user _traceroute.  They don't have a shell.
+Processing /etc/passwd line: _ping:*:51:51:ping privdrop user:/var/empty:/sbin/nologin
+    Skipping user _ping.  They don't have a shell.
+Processing /etc/passwd line: _rebound:*:52:52:Rebound DNS Daemon:/var/empty:/sbin/nologin
+    Skipping user _rebound.  They don't have a shell.
+Processing /etc/passwd line: _unbound:*:53:53:Unbound Daemon:/var/unbound:/sbin/nologin
+    Skipping user _unbound.  They don't have a shell.
+Processing /etc/passwd line: _dpb:*:54:54:dpb privsep:/var/empty:/sbin/nologin
+    Skipping user _dpb.  They don't have a shell.
+Processing /etc/passwd line: _pbuild:*:55:55:dpb build user:/nonexistent:/sbin/nologin
+    Skipping user _pbuild.  They don't have a shell.
+Processing /etc/passwd line: _pfetch:*:56:56:dpb fetch user:/nonexistent:/sbin/nologin
+    Skipping user _pfetch.  They don't have a shell.
+Processing /etc/passwd line: _pkgfetch:*:57:57:pkg fetch user:/nonexistent:/sbin/nologin
+    Skipping user _pkgfetch.  They don't have a shell.
+Processing /etc/passwd line: _pkguntar:*:58:58:pkg untar user:/nonexistent:/sbin/nologin
+    Skipping user _pkguntar.  They don't have a shell.
+Processing /etc/passwd line: _spamd:*:62:62:Spam Daemon:/var/empty:/sbin/nologin
+    Skipping user _spamd.  They don't have a shell.
+Processing /etc/passwd line: www:*:67:67:HTTP Server:/var/www:/sbin/nologin
+    Skipping user www.  They don't have a shell.
+Processing /etc/passwd line: _isakmpd:*:68:68:isakmpd privsep:/var/empty:/sbin/nologin
+    Skipping user _isakmpd.  They don't have a shell.
+Processing /etc/passwd line: _syslogd:*:73:73:Syslog Daemon:/var/empty:/sbin/nologin
+    Skipping user _syslogd.  They don't have a shell.
+Processing /etc/passwd line: _pflogd:*:74:74:pflogd privsep:/var/empty:/sbin/nologin
+    Skipping user _pflogd.  They don't have a shell.
+Processing /etc/passwd line: _bgpd:*:75:75:BGP Daemon:/var/empty:/sbin/nologin
+    Skipping user _bgpd.  They don't have a shell.
+Processing /etc/passwd line: _tcpdump:*:76:76:tcpdump privsep:/var/empty:/sbin/nologin
+    Skipping user _tcpdump.  They don't have a shell.
+Processing /etc/passwd line: _dhcp:*:77:77:DHCP programs:/var/empty:/sbin/nologin
+    Skipping user _dhcp.  They don't have a shell.
+Processing /etc/passwd line: _mopd:*:78:78:MOP Daemon:/var/empty:/sbin/nologin
+    Skipping user _mopd.  They don't have a shell.
+Processing /etc/passwd line: _tftpd:*:79:79:TFTP Daemon:/var/empty:/sbin/nologin
+    Skipping user _tftpd.  They don't have a shell.
+Processing /etc/passwd line: _rbootd:*:80:80:rbootd Daemon:/var/empty:/sbin/nologin
+    Skipping user _rbootd.  They don't have a shell.
+Processing /etc/passwd line: _ppp:*:82:82:PPP utilities:/var/empty:/sbin/nologin
+    Skipping user _ppp.  They don't have a shell.
+Processing /etc/passwd line: _ntp:*:83:83:NTP Daemon:/var/empty:/sbin/nologin
+    Skipping user _ntp.  They don't have a shell.
+Processing /etc/passwd line: _ftp:*:84:84:FTP Daemon:/var/empty:/sbin/nologin
+    Skipping user _ftp.  They don't have a shell.
+Processing /etc/passwd line: _ospfd:*:85:85:OSPF Daemon:/var/empty:/sbin/nologin
+    Skipping user _ospfd.  They don't have a shell.
+Processing /etc/passwd line: _hostapd:*:86:86:HostAP Daemon:/var/empty:/sbin/nologin
+    Skipping user _hostapd.  They don't have a shell.
+Processing /etc/passwd line: _dvmrpd:*:87:87:DVMRP Daemon:/var/empty:/sbin/nologin
+    Skipping user _dvmrpd.  They don't have a shell.
+Processing /etc/passwd line: _ripd:*:88:88:RIP Daemon:/var/empty:/sbin/nologin
+    Skipping user _ripd.  They don't have a shell.
+Processing /etc/passwd line: _relayd:*:89:89:Relay Daemon:/var/empty:/sbin/nologin
+    Skipping user _relayd.  They don't have a shell.
+Processing /etc/passwd line: _ospf6d:*:90:90:OSPF6 Daemon:/var/empty:/sbin/nologin
+    Skipping user _ospf6d.  They don't have a shell.
+Processing /etc/passwd line: _snmpd:*:91:91:SNMP Daemon:/var/empty:/sbin/nologin
+    Skipping user _snmpd.  They don't have a shell.
+Processing /etc/passwd line: _rtadvd:*:92:92:IPv6 Router Advertisement Daemon:/var/empty:/sbin/nologin
+    Skipping user _rtadvd.  They don't have a shell.
+Processing /etc/passwd line: _ypldap:*:93:93:YP to LDAP Daemon:/var/empty:/sbin/nologin
+    Skipping user _ypldap.  They don't have a shell.
+Processing /etc/passwd line: _smtpd:*:95:95:SMTP Daemon:/var/empty:/sbin/nologin
+    Skipping user _smtpd.  They don't have a shell.
+Processing /etc/passwd line: _rwalld:*:96:96:rpc.rwalld:/var/empty:/sbin/nologin
+    Skipping user _rwalld.  They don't have a shell.
+Processing /etc/passwd line: _nsd:*:97:97:NSD Daemon:/var/empty:/sbin/nologin
+    Skipping user _nsd.  They don't have a shell.
+Processing /etc/passwd line: _ldpd:*:98:98:LDP Daemon:/var/empty:/sbin/nologin
+    Skipping user _ldpd.  They don't have a shell.
+Processing /etc/passwd line: _sndio:*:99:99:sndio privsep:/var/empty:/sbin/nologin
+    Skipping user _sndio.  They don't have a shell.
+Processing /etc/passwd line: _ldapd:*:100:100:LDAP Daemon:/var/empty:/sbin/nologin
+    Skipping user _ldapd.  They don't have a shell.
+Processing /etc/passwd line: _iked:*:101:101:IKEv2 Daemon:/var/empty:/sbin/nologin
+    Skipping user _iked.  They don't have a shell.
+Processing /etc/passwd line: _iscsid:*:102:102:iSCSI Daemon:/var/empty:/sbin/nologin
+    Skipping user _iscsid.  They don't have a shell.
+Processing /etc/passwd line: _smtpq:*:103:103:SMTP Daemon:/var/empty:/sbin/nologin
+    Skipping user _smtpq.  They don't have a shell.
+Processing /etc/passwd line: _file:*:104:104:file privsep:/var/empty:/sbin/nologin
+    Skipping user _file.  They don't have a shell.
+Processing /etc/passwd line: _radiusd:*:105:105:RADIUS Daemon:/var/empty:/sbin/nologin
+    Skipping user _radiusd.  They don't have a shell.
+Processing /etc/passwd line: _eigrpd:*:106:106:EIGRP Daemon:/var/empty:/sbin/nologin
+    Skipping user _eigrpd.  They don't have a shell.
+Processing /etc/passwd line: _vmd:*:107:107:VM Daemon:/var/empty:/sbin/nologin
+    Skipping user _vmd.  They don't have a shell.
+Processing /etc/passwd line: _tftp_proxy:*:108:108:tftp proxy daemon:/nonexistent:/sbin/nologin
+    Skipping user _tftp_proxy.  They don't have a shell.
+Processing /etc/passwd line: _ftp_proxy:*:109:109:ftp proxy daemon:/nonexistent:/sbin/nologin
+    Skipping user _ftp_proxy.  They don't have a shell.
+Processing /etc/passwd line: _sndiop:*:110:110:sndio privileged user:/var/empty:/sbin/nologin
+    Skipping user _sndiop.  They don't have a shell.
+Processing /etc/passwd line: _syspatch:*:112:112:syspatch unprivileged user:/var/empty:/sbin/nologin
+    Skipping user _syspatch.  They don't have a shell.
+Processing /etc/passwd line: _slaacd:*:115:115:SLAAC Daemon:/var/empty:/sbin/nologin
+    Skipping user _slaacd.  They don't have a shell.
+Processing /etc/passwd line: nobody:*:32767:32767:Unprivileged user:/nonexistent:/sbin/nologin
+    Skipping user nobody.  They don't have a shell.
+Processing /etc/passwd line: _postgresql:*:503:503:PostgreSQL Manager:/var/postgresql:/bin/sh
+    Checking if anyone except _postgresql can change /var/postgresql
+Processing /etc/passwd line: _dbus:*:572:572:dbus user:/nonexistent:/sbin/nologin
+    Skipping user _dbus.  They don't have a shell.
+Processing /etc/passwd line: _avahi:*:629:629:Avahi User:/var/empty:/sbin/nologin
+    Skipping user _avahi.  They don't have a shell.
+Processing /etc/passwd line: _cups:*:541:541:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
+    Skipping user _cups.  They don't have a shell.
+Processing /etc/passwd line: appsrv:*:1000:1000:Application Server:/var/appsrv:/sbin/nologin
+    Skipping user appsrv.  They don't have a shell.
+Processing /etc/passwd line: +:*:0:0:::
+ERROR: Can't find absolute path for +.  Skipping.
+Processing /etc/passwd line: userca:*:1001:1001:User CA:/home/userca:/bin/ksh
+    Checking if anyone except userca can change /home/userca
+
+############################################
+Checking for readable sensitive files in home directories
+############################################
+
+############################################
+Checking SUID/SGID programs
+############################################
+Checking SGID-crontab program /usr/bin/at: -r-xr-sr-x  4 root  crontab  35776 Mar 24  2018 /usr/bin/at
+Checking SGID-crontab program /usr/bin/atq: -r-xr-sr-x  4 root  crontab  35776 Mar 24  2018 /usr/bin/atq
+Checking SGID-crontab program /usr/bin/atrm: -r-xr-sr-x  4 root  crontab  35776 Mar 24  2018 /usr/bin/atrm
+Checking SGID-crontab program /usr/bin/batch: -r-xr-sr-x  4 root  crontab  35776 Mar 24  2018 /usr/bin/batch
+Checking SUID-root program /usr/bin/chfn: -r-sr-xr-x  3 root  bin  26888 Mar 24  2018 /usr/bin/chfn
+Checking SUID-root program /usr/bin/chpass: -r-sr-xr-x  3 root  bin  26888 Mar 24  2018 /usr/bin/chpass
+Checking SUID-root program /usr/bin/chsh: -r-sr-xr-x  3 root  bin  26888 Mar 24  2018 /usr/bin/chsh
+Checking SGID-crontab program /usr/bin/crontab: -r-xr-sr-x  1 root  crontab  30664 Mar 24  2018 /usr/bin/crontab
+Checking SUID-root program /usr/bin/doas: -r-sr-xr-x  1 root  bin  26456 Mar 24  2018 /usr/bin/doas
+Checking SGID-auth program /usr/bin/lock: -r-xr-sr-x  1 root  auth  13952 Mar 24  2018 /usr/bin/lock
+Checking SGID-daemon program /usr/bin/lpq: -r-xr-sr-x  1 root  daemon  30520 Mar 24  2018 /usr/bin/lpq
+Checking SUID-root program /usr/bin/lpr: -r-sr-sr-x  1 root  daemon  30472 Mar 24  2018 /usr/bin/lpr
+Checking SGID-daemon program /usr/bin/lpr: -r-sr-sr-x  1 root  daemon  30472 Mar 24  2018 /usr/bin/lpr
+Checking SUID-root program /usr/bin/lprm: -r-sr-sr-x  1 root  daemon  26360 Mar 24  2018 /usr/bin/lprm
+Checking SGID-daemon program /usr/bin/lprm: -r-sr-sr-x  1 root  daemon  26360 Mar 24  2018 /usr/bin/lprm
+Checking SUID-root program /usr/bin/passwd: -r-sr-xr-x  1 root  bin  22408 Mar 24  2018 /usr/bin/passwd
+Checking SGID-auth program /usr/bin/skeyaudit: -r-xr-sr-x  1 root  auth  13952 Mar 24  2018 /usr/bin/skeyaudit
+Checking SGID-auth program /usr/bin/skeyinfo: -r-xr-sr-x  1 root  auth  9856 Mar 24  2018 /usr/bin/skeyinfo
+Checking SGID-auth program /usr/bin/skeyinit: -r-xr-sr-x  1 root  auth  18048 Mar 24  2018 /usr/bin/skeyinit
+Checking SGID-_sshagnt program /usr/bin/ssh-agent: -r-xr-sr-x  1 root  _sshagnt  345912 Mar 24  2018 /usr/bin/ssh-agent
+Checking SUID-root program /usr/bin/su: -r-sr-xr-x  1 root  bin  18048 Mar 24  2018 /usr/bin/su
+Checking SGID-tty program /usr/bin/wall: -r-xr-sr-x  1 root  tty  18376 Mar 24  2018 /usr/bin/wall
+Checking SGID-tty program /usr/bin/write: -r-xr-sr-x  1 root  tty  13952 Mar 24  2018 /usr/bin/write
+Checking SUID-root program /usr/libexec/lockspool: -r-sr-xr-x  1 root  bin  9856 Mar 24  2018 /usr/libexec/lockspool
+Checking SUID-root program /usr/libexec/ssh-keysign: -r-sr-xr-x  1 root  bin  427816 Mar 24  2018 /usr/libexec/ssh-keysign
+Checking SUID-root program /usr/local/libexec/dbus-daemon-launch-helper: -rwsr-x---  1 root  _dbus  55264 Mar 27  2018 /usr/local/libexec/dbus-daemon-launch-helper
+Checking SUID-root program /usr/sbin/authpf: -r-sr-sr-x  2 root  authpf  22392 Mar 24  2018 /usr/sbin/authpf
+Checking SGID-authpf program /usr/sbin/authpf: -r-sr-sr-x  2 root  authpf  22392 Mar 24  2018 /usr/sbin/authpf
+Checking SUID-root program /usr/sbin/authpf-noip: -r-sr-sr-x  2 root  authpf  22392 Mar 24  2018 /usr/sbin/authpf-noip
+Checking SGID-authpf program /usr/sbin/authpf-noip: -r-sr-sr-x  2 root  authpf  22392 Mar 24  2018 /usr/sbin/authpf-noip
+Checking SGID-daemon program /usr/sbin/lpc: -r-xr-sr-x  1 root  daemon  39720 Mar 24  2018 /usr/sbin/lpc
+Checking SGID-daemon program /usr/sbin/lpd: -r-xr-s---  1 root  daemon  84056 Mar 24  2018 /usr/sbin/lpd
+Checking SUID-root program /usr/sbin/pppd: -r-sr-x---  1 root  network  143360 Mar 24  2018 /usr/sbin/pppd
+Checking SGID-_smtpq program /usr/sbin/smtpctl: -r-xr-sr-x  1 root  _smtpq  203016 Mar 24  2018 /usr/sbin/smtpctl
+Checking SUID-root program /usr/sbin/traceroute: -r-sr-xr-x  2 root  bin  34512 Mar 24  2018 /usr/sbin/traceroute
+Checking SUID-root program /usr/sbin/traceroute6: -r-sr-xr-x  2 root  bin  34512 Mar 24  2018 /usr/sbin/traceroute6
+Checking SGID-auth program /usr/X11R6/bin/xlock: -rwxr-sr-x  1 root  auth  3013384 Mar 24  2018 /usr/X11R6/bin/xlock
+Checking SGID-utmp program /usr/X11R6/bin/xterm: -rwxr-sr-x  1 root  utmp  639008 Mar 24  2018 /usr/X11R6/bin/xterm
+Checking SUID-root program /usr/X11R6/bin/Xorg: -rwsr-xr-x  1 root  bin  2670386 Mar 24  2018 /usr/X11R6/bin/Xorg
+Checking SUID-root program /sbin/ping: -r-sr-xr-x  2 root  bin  334168 Mar 24  2018 /sbin/ping
+Checking SUID-root program /sbin/ping6: -r-sr-xr-x  2 root  bin  334168 Mar 24  2018 /sbin/ping6
+Checking SUID-root program /sbin/shutdown: -r-sr-x---  1 root  operator  256448 Mar 24  2018 /sbin/shutdown
+
+############################################
+Checking fscaps programs
+############################################
+
+############################################
+Checking for cleartext subversion passwords in home directories
+############################################
+
+############################################
+Checking for Private SSH Keys in home directories
+############################################
+
+############################################
+Checking for Public SSH Keys in home directories
+############################################
+
+############################################
+Checking classpath permissions for Java processes
+############################################
+ps: unknown option -- f
+usage: ps [-AaceHhjkLlmrSTuvwx] [-M core] [-N system] [-O fmt] [-o fmt] [-p pid]
+          [-t tty] [-U username] [-W swap]
+
+############################################
+Checking for SSH agents
+############################################
+ps: unknown option -- f
+usage: ps [-AaceHhjkLlmrSTuvwx] [-M core] [-N system] [-O fmt] [-o fmt] [-p pid]
+          [-t tty] [-U username] [-W swap]
+No SSH agents found
+
+############################################
+Checking for GPG agents
+############################################
+ps: unknown option -- f
+usage: ps [-AaceHhjkLlmrSTuvwx] [-M core] [-N system] [-O fmt] [-o fmt] [-p pid]
+          [-t tty] [-U username] [-W swap]
+No GPG agents found
+
+############################################
+Checking startup files (init.d / rc.d) aren't writable
+############################################
+Processing startup script /etc/rc.d/amd
+    Checking if anyone except root can change /etc/rc.d/amd
+    Checking if anyone except root can change /usr/sbin/amdx0a
+Processing startup script /etc/rc.d/apmd
+    Checking if anyone except root can change /etc/rc.d/apmd
+    Checking if anyone except root can change /usr/sbin/apmdx0a
+Processing startup script /etc/rc.d/avahi_daemon
+    Checking if anyone except root can change /etc/rc.d/avahi_daemon
+    Checking if anyone except root can change /usr/local/sbin/avahi-daemon
+Processing startup script /etc/rc.d/avahi_dnsconfd
+    Checking if anyone except root can change /etc/rc.d/avahi_dnsconfd
+    Checking if anyone except root can change /usr/local/sbin/avahi-dnsconfd
+Processing startup script /etc/rc.d/bgpd
+    Checking if anyone except root can change /etc/rc.d/bgpd
+    Checking if anyone except root can change /usr/sbin/bgpdx0a
+Processing startup script /etc/rc.d/bootparamd
+    Checking if anyone except root can change /etc/rc.d/bootparamd
+    Checking if anyone except root can change /etc/bootparams
+Processing startup script /etc/rc.d/cron
+    Checking if anyone except root can change /etc/rc.d/cron
+    Checking if anyone except root can change /usr/sbin/cronx0a
+Processing startup script /etc/rc.d/dhcpd
+    Checking if anyone except root can change /etc/rc.d/dhcpd
+    Checking if anyone except root can change /usr/sbin/dhcpdx0a
+Processing startup script /etc/rc.d/dhcrelay
+    Checking if anyone except root can change /etc/rc.d/dhcrelay
+    Checking if anyone except root can change /usr/sbin/dhcrelayx0a
+Processing startup script /etc/rc.d/dhcrelay6
+    Checking if anyone except root can change /etc/rc.d/dhcrelay6
+    Checking if anyone except root can change /usr/sbin/dhcrelay6x0a
+Processing startup script /etc/rc.d/dvmrpd
+    Checking if anyone except root can change /etc/rc.d/dvmrpd
+    Checking if anyone except root can change /usr/sbin/dvmrpdx0a
+Processing startup script /etc/rc.d/eigrpd
+    Checking if anyone except root can change /etc/rc.d/eigrpd
+    Checking if anyone except root can change /usr/sbin/eigrpdx0a
+Processing startup script /etc/rc.d/ftpd
+    Checking if anyone except root can change /etc/rc.d/ftpd
+    Checking if anyone except root can change /usr/libexec/ftpd
+Processing startup script /etc/rc.d/ftpproxy
+    Checking if anyone except root can change /etc/rc.d/ftpproxy
+    Checking if anyone except root can change /usr/sbin/ftp-proxyx0a
+Processing startup script /etc/rc.d/ftpproxy6
+    Checking if anyone except root can change /etc/rc.d/ftpproxy6
+    Checking if anyone except root can change /usr/sbin/ftp-proxy
+Processing startup script /etc/rc.d/hostapd
+    Checking if anyone except root can change /etc/rc.d/hostapd
+    Checking if anyone except root can change /usr/sbin/hostapdx0a
+Processing startup script /etc/rc.d/hotplugd
+    Checking if anyone except root can change /etc/rc.d/hotplugd
+    Checking if anyone except root can change /usr/sbin/hotplugdx0a
+Processing startup script /etc/rc.d/httpd
+    Checking if anyone except root can change /etc/rc.d/httpd
+    Checking if anyone except root can change /usr/sbin/httpdx0a
+Processing startup script /etc/rc.d/identd
+    Checking if anyone except root can change /etc/rc.d/identd
+    Checking if anyone except root can change /usr/sbin/identdx0a
+Processing startup script /etc/rc.d/ifstated
+    Checking if anyone except root can change /etc/rc.d/ifstated
+    Checking if anyone except root can change /usr/sbin/ifstatedx0a
+Processing startup script /etc/rc.d/iked
+    Checking if anyone except root can change /etc/rc.d/iked
+    Checking if anyone except root can change /sbin/ikedx0a
+Processing startup script /etc/rc.d/inetd
+    Checking if anyone except root can change /etc/rc.d/inetd
+    Checking if anyone except root can change /usr/sbin/inetdx0a
+Processing startup script /etc/rc.d/isakmpd
+    Checking if anyone except root can change /etc/rc.d/isakmpd
+    Checking if anyone except root can change /sbin/isakmpdx0a
+Processing startup script /etc/rc.d/iscsid
+    Checking if anyone except root can change /etc/rc.d/iscsid
+    Checking if anyone except root can change /usr/sbin/iscsictlx0a
+    Checking if anyone except root can change /usr/sbin/iscsidx0a
+Processing startup script /etc/rc.d/ldapd
+    Checking if anyone except root can change /etc/rc.d/ldapd
+    Checking if anyone except root can change /usr/sbin/ldapdx0a
+Processing startup script /etc/rc.d/ldattach
+    Checking if anyone except root can change /etc/rc.d/ldattach
+    Checking if anyone except root can change /sbin/ldattachx0a
+Processing startup script /etc/rc.d/ldomd
+    Checking if anyone except root can change /etc/rc.d/ldomd
+    Checking if anyone except root can change /usr/sbin/ldomdx0a
+Processing startup script /etc/rc.d/ldpd
+    Checking if anyone except root can change /etc/rc.d/ldpd
+    Checking if anyone except root can change /usr/sbin/ldpdx0a
+Processing startup script /etc/rc.d/lockd
+    Checking if anyone except root can change /etc/rc.d/lockd
+Processing startup script /etc/rc.d/lpd
+    Checking if anyone except root can change /etc/rc.d/lpd
+    Checking if anyone except root can change /usr/sbin/lpdx0a
+Processing startup script /etc/rc.d/messagebus
+    Checking if anyone except root can change /etc/rc.d/messagebus
+    Checking if anyone except root can change /usr/local/bin/dbus-daemon
+    Checking if anyone except root can change /var/run/dbus
+    Checking if anyone except root can change /var/run/dbus/pid
+Processing startup script /etc/rc.d/mopd
+    Checking if anyone except root can change /etc/rc.d/mopd
+    Checking if anyone except root can change /tftpboot/mop
+    Checking if anyone except root can change /usr/sbin/mopdx0a
+Processing startup script /etc/rc.d/mountd
+    Checking if anyone except root can change /etc/rc.d/mountd
+    Checking if anyone except root can change /etc/exports
+    Checking if anyone except root can change /sbin/mountdx0a
+    Checking if anyone except root can change /var/db/mountdtab
+Processing startup script /etc/rc.d/mrouted
+    Checking if anyone except root can change /etc/rc.d/mrouted
+    Checking if anyone except root can change /usr/sbin/mroutedx0a
+Processing startup script /etc/rc.d/nfsd
+    Checking if anyone except root can change /etc/rc.d/nfsd
+    Checking if anyone except root can change /etc/exports
+    Checking if anyone except root can change /sbin/nfsdx0a
+Processing startup script /etc/rc.d/nmbd
+    Checking if anyone except root can change /etc/rc.d/nmbd
+    Checking if anyone except root can change /usr/local/bin/smbcontrolx0a
+    Checking if anyone except root can change /usr/local/sbin/nmbd
+Processing startup script /etc/rc.d/npppd
+    Checking if anyone except root can change /etc/rc.d/npppd
+    Checking if anyone except root can change /usr/sbin/npppdx0a
+Processing startup script /etc/rc.d/nsd
+    Checking if anyone except root can change /etc/rc.d/nsd
+    Checking if anyone except root can change /usr/sbin/nsd-control-setup
+    Checking if anyone except root can change /usr/sbin/nsd-controlx0a
+Processing startup script /etc/rc.d/ntpd
+    Checking if anyone except root can change /etc/rc.d/ntpd
+    Checking if anyone except root can change /usr/sbin/ntpdx0a
+Processing startup script /etc/rc.d/ospf6d
+    Checking if anyone except root can change /etc/rc.d/ospf6d
+    Checking if anyone except root can change /usr/sbin/ospf6dx0a
+Processing startup script /etc/rc.d/ospfd
+    Checking if anyone except root can change /etc/rc.d/ospfd
+    Checking if anyone except root can change /usr/sbin/ospfdx0a
+Processing startup script /etc/rc.d/pflogd
+    Checking if anyone except root can change /etc/rc.d/pflogd
+    Checking if anyone except root can change /sbin/pflogdx0a
+Processing startup script /etc/rc.d/portmap
+    Checking if anyone except root can change /etc/rc.d/portmap
+    Checking if anyone except root can change /usr/sbin/portmapx0a
+Processing startup script /etc/rc.d/postgresql
+    Checking if anyone except root can change /etc/rc.d/postgresql
+    Checking if anyone except root can change /usr/local/bin/pg_ctlx0a
+    Checking if anyone except root can change /var/postgresql/datax0a
+[UPC001] WARNING: /etc/rc.d/postgresql is run by root at startup. /etc/rc.d/postgresql contains the string /var/postgresql/datax0a. The user _postgresql can write to /var/postgresql
+    Checking if anyone except root can change /var/postgresql/logfilex0a
+[UPC001] WARNING: /etc/rc.d/postgresql is run by root at startup. /etc/rc.d/postgresql contains the string /var/postgresql/logfilex0a. The user _postgresql can write to /var/postgresql
+Processing startup script /etc/rc.d/radiusd
+    Checking if anyone except root can change /etc/rc.d/radiusd
+    Checking if anyone except root can change /usr/sbin/radiusdx0a
+Processing startup script /etc/rc.d/rarpd
+    Checking if anyone except root can change /etc/rc.d/rarpd
+    Checking if anyone except root can change /etc/ethers
+    Checking if anyone except root can change /usr/sbin/rarpdx0a
+Processing startup script /etc/rc.d/rbootd
+    Checking if anyone except root can change /etc/rc.d/rbootd
+    Checking if anyone except root can change /usr/sbin/rbootdx0a
+Processing startup script /etc/rc.d/rc.subr
+    Checking if anyone except root can change /etc/rc.d/rc.subr
+    Checking if anyone except root can change /bin/sh
+    Checking if anyone except root can change /dev/null
+[UPC002] WARNING: /etc/rc.d/rc.subr is run by root at startup. /etc/rc.d/rc.subr contains the string /dev/null. The group wheel can write to /dev/null
+[UPC004] WARNING: /etc/rc.d/rc.subr is run by root at startup. /etc/rc.d/rc.subr contains the string /dev/null. World write is set for /dev/null
+Processing startup script /etc/rc.d/rebound
+    Checking if anyone except root can change /etc/rc.d/rebound
+    Checking if anyone except root can change /usr/sbin/reboundx0a
+Processing startup script /etc/rc.d/relayd
+    Checking if anyone except root can change /etc/rc.d/relayd
+    Checking if anyone except root can change /usr/sbin/relaydx0a
+Processing startup script /etc/rc.d/ripd
+    Checking if anyone except root can change /etc/rc.d/ripd
+    Checking if anyone except root can change /usr/sbin/ripdx0a
+Processing startup script /etc/rc.d/route6d
+    Checking if anyone except root can change /etc/rc.d/route6d
+    Checking if anyone except root can change /usr/sbin/route6dx0a
+Processing startup script /etc/rc.d/rtadvd
+    Checking if anyone except root can change /etc/rc.d/rtadvd
+    Checking if anyone except root can change /usr/sbin/rtadvdx0a
+Processing startup script /etc/rc.d/samba
+    Checking if anyone except root can change /etc/rc.d/samba
+Processing startup script /etc/rc.d/samba_ad_dc
+    Checking if anyone except root can change /etc/rc.d/samba_ad_dc
+    Checking if anyone except root can change /usr/local/bin/smbcontrolx0a
+    Checking if anyone except root can change /usr/local/sbin/samba
+Processing startup script /etc/rc.d/saslauthd
+    Checking if anyone except root can change /etc/rc.d/saslauthd
+    Checking if anyone except root can change /usr/local/sbin/saslauthdx0a
+Processing startup script /etc/rc.d/sasyncd
+    Checking if anyone except root can change /etc/rc.d/sasyncd
+    Checking if anyone except root can change /usr/sbin/sasyncdx0a
+Processing startup script /etc/rc.d/sensorsd
+    Checking if anyone except root can change /etc/rc.d/sensorsd
+    Checking if anyone except root can change /usr/sbin/sensorsdx0a
+Processing startup script /etc/rc.d/slaacd
+    Checking if anyone except root can change /etc/rc.d/slaacd
+    Checking if anyone except root can change /sbin/slaacdx0a
+Processing startup script /etc/rc.d/slowcgi
+    Checking if anyone except root can change /etc/rc.d/slowcgi
+    Checking if anyone except root can change /usr/sbin/slowcgix0a
+Processing startup script /etc/rc.d/smbd
+    Checking if anyone except root can change /etc/rc.d/smbd
+    Checking if anyone except root can change /usr/local/bin/smbcontrolx0a
+    Checking if anyone except root can change /usr/local/sbin/smbd
+Processing startup script /etc/rc.d/smtpd
+    Checking if anyone except root can change /etc/rc.d/smtpd
+    Checking if anyone except root can change /usr/sbin/smtpdx0a
+Processing startup script /etc/rc.d/sndiod
+    Checking if anyone except root can change /etc/rc.d/sndiod
+    Checking if anyone except root can change /usr/bin/sndiodx0a
+Processing startup script /etc/rc.d/snmpd
+    Checking if anyone except root can change /etc/rc.d/snmpd
+    Checking if anyone except root can change /usr/sbin/snmpdx0a
+Processing startup script /etc/rc.d/spamd
+    Checking if anyone except root can change /etc/rc.d/spamd
+    Checking if anyone except root can change /usr/libexec/spamd-setup
+    Checking if anyone except root can change /usr/libexec/spamdx0a
+Processing startup script /etc/rc.d/spamlogd
+    Checking if anyone except root can change /etc/rc.d/spamlogd
+    Checking if anyone except root can change /usr/libexec/spamlogdx0a
+Processing startup script /etc/rc.d/sshauthd
+    Checking if anyone except root can change /etc/rc.d/sshauthd
+    Checking if anyone except root can change /usr/local/bin/uwsgix0a
+Processing startup script /etc/rc.d/sshd
+    Checking if anyone except root can change /etc/rc.d/sshd
+    Checking if anyone except root can change /usr/sbin/sshdx0a
+Processing startup script /etc/rc.d/statd
+    Checking if anyone except root can change /etc/rc.d/statd
+Processing startup script /etc/rc.d/switchd
+    Checking if anyone except root can change /etc/rc.d/switchd
+    Checking if anyone except root can change /usr/sbin/switchdx0a
+Processing startup script /etc/rc.d/syslogd
+    Checking if anyone except root can change /etc/rc.d/syslogd
+    Checking if anyone except root can change /dev/log
+    Checking if anyone except root can change /usr/sbin/syslogdx0a
+Processing startup script /etc/rc.d/tftpd
+    Checking if anyone except root can change /etc/rc.d/tftpd
+    Checking if anyone except root can change /tftpbootx0a
+    Checking if anyone except root can change /usr/sbin/tftpdx0a
+Processing startup script /etc/rc.d/tftpproxy
+    Checking if anyone except root can change /etc/rc.d/tftpproxy
+    Checking if anyone except root can change /usr/sbin/tftp-proxyx0a
+Processing startup script /etc/rc.d/unbound
+    Checking if anyone except root can change /etc/rc.d/unbound
+    Checking if anyone except root can change /usr/sbin/unbound-anchor
+    Checking if anyone except root can change /usr/sbin/unbound-checkconf
+    Checking if anyone except root can change /usr/sbin/unboundx0a
+Processing startup script /etc/rc.d/vmd
+    Checking if anyone except root can change /etc/rc.d/vmd
+    Checking if anyone except root can change /usr/sbin/vmdx0a
+Processing startup script /etc/rc.d/watchdogd
+    Checking if anyone except root can change /etc/rc.d/watchdogd
+    Checking if anyone except root can change /usr/sbin/watchdogdx0a
+Processing startup script /etc/rc.d/winbindd
+    Checking if anyone except root can change /etc/rc.d/winbindd
+    Checking if anyone except root can change /usr/local/bin/smbcontrolx0a
+    Checking if anyone except root can change /usr/local/sbin/winbindd
+Processing startup script /etc/rc.d/wsmoused
+    Checking if anyone except root can change /etc/rc.d/wsmoused
+    Checking if anyone except root can change /usr/sbin/wsmousedx0a
+Processing startup script /etc/rc.d/xenodm
+    Checking if anyone except root can change /etc/rc.d/xenodm
+    Checking if anyone except root can change /usr/X11R6/bin/xenodmx0a
+Processing startup script /etc/rc.d/ypbind
+    Checking if anyone except root can change /etc/rc.d/ypbind
+    Checking if anyone except root can change /usr/sbin/ypbindx0a
+Processing startup script /etc/rc.d/ypldap
+    Checking if anyone except root can change /etc/rc.d/ypldap
+    Checking if anyone except root can change /usr/sbin/ypldapx0a
+Processing startup script /etc/rc.d/ypserv
+    Checking if anyone except root can change /etc/rc.d/ypserv
+    Checking if anyone except root can change /usr/sbin/ypservx0a
+
+############################################
+Checking if running programs are writable
+############################################
+ERROR: Can't find absolute path for COMMAND.  Skipping.
+    Checking if anyone except alice197 can change /bin/sh
+    Checking if anyone except root can change /sbin/init
+    Checking if anyone except root can change /sbin/slaacd
+ERROR: Can't find absolute path for slaacd:.  Skipping.
+ERROR: Can't find absolute path for slaacd:.  Skipping.
+ERROR: Can't find absolute path for syslogd:.  Skipping.
+    Checking if anyone except _syslogd can change /usr/sbin/syslogd
+ERROR: Can't find absolute path for pflogd:.  Skipping.
+ERROR: Can't find absolute path for pflogd:.  Skipping.
+ERROR: Can't find absolute path for ntpd:.  Skipping.
+    Checking if anyone except root can change /usr/sbin/ntpd
+ERROR: Can't find absolute path for ntpd:.  Skipping.
+ERROR: Can't find absolute path for ldapd:.  Skipping.
+ERROR: Can't find absolute path for ldapd:.  Skipping.
+    Checking if anyone except _portmap can change /usr/sbin/portmap
+ERROR: Can't find absolute path for ypldap:.  Skipping.
+ERROR: Can't find absolute path for ypldap:.  Skipping.
+ERROR: Can't find absolute path for ypldap:.  Skipping.
+    Checking if anyone except root can change /usr/sbin/ypbind
+    Checking if anyone except root can change /usr/sbin/sshd
+ERROR: Can't find absolute path for httpd:.  Skipping.
+ERROR: Can't find absolute path for httpd:.  Skipping.
+ERROR: Can't find absolute path for httpd:.  Skipping.
+ERROR: Can't find absolute path for httpd:.  Skipping.
+    Checking if anyone except root can change /usr/sbin/httpd
+ERROR: Can't find absolute path for sndiod:.  Skipping.
+    Checking if anyone except _sndio can change /usr/bin/sndiod
+    Checking if anyone except root can change /usr/local/sbin/smbd
+    Checking if anyone except root can change /usr/local/sbin/smbd
+    Checking if anyone except root can change /usr/local/sbin/smbd
+    Checking if anyone except root can change /usr/local/sbin/smbd
+    Checking if anyone except root can change /usr/local/sbin/nmbd
+ERROR: Can't find absolute path for postgres:.  Skipping.
+ERROR: Can't find absolute path for postgres:.  Skipping.
+ERROR: Can't find absolute path for postgres:.  Skipping.
+ERROR: Can't find absolute path for postgres:.  Skipping.
+ERROR: Can't find absolute path for postgres:.  Skipping.
+ERROR: Can't find absolute path for postgres:.  Skipping.
+    Checking if anyone except appsrv can change /usr/local/bin/uwsgi
+    Checking if anyone except root can change /usr/sbin/cron
+    Checking if anyone except appsrv can change /usr/local/bin/uwsgi
+    Checking if anyone except appsrv can change /usr/local/bin/uwsgi
+    Checking if anyone except appsrv can change /usr/local/bin/uwsgi
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+    Checking if anyone except root can change /usr/local/sbin/smbd
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for sshd:.  Skipping.
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+ERROR: Can't find absolute path for vi.  Skipping.
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+    Checking if anyone except alice197 can change /bin/sh
+ERROR: Can't find absolute path for ps.  Skipping.
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+    Checking if anyone except userca can change /usr/bin/ssh-keygen
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+ERROR: Can't find absolute path for -ksh.  Skipping.
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+file: unknown option -- k
+usage: file [-bchiLsW] file ...
+    Checking if anyone except _postgre can change /usr/local/bin/postgres
+    Checking if anyone except root can change /usr/libexec/getty
+    Checking if anyone except root can change /usr/libexec/getty
+    Checking if anyone except root can change /usr/libexec/getty
+    Checking if anyone except root can change /usr/libexec/getty
+    Checking if anyone except root can change /usr/libexec/getty
+
+############################################
+Checking exploit mitigation
+############################################
+
