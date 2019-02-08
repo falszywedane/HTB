@@ -1,0 +1,39 @@
+10.10.10.109 VAULT
+
+Skan nmap: otwarty port 80
+Na stronie: Odniesienie do klienta "Sparklays"
+Proba dostepu do 10.10.10.109/sparklays --> Forbidden
+
+Skan GoBusterem z poziomu 10.10.10.109/sparklays/:
+        - admin.php - rabbit hole?
+        - login.php --> access denied
+        - design
+            ---> skanowanie ../sparklays/design ----> wykryto design.html i /uploads
+
+                ../design.html - przekierowanie do UPLOAD FORMA
+
+             
+_______________________________________________________________________________________
+UPLOAD FORM
+    Filtrowanie
+    Dopuszczone rozszerzenia:    
+        -jpeg, jpg, gif, png..
+    - php5 --> Wrzucenie payloadu z venoma ---> SESJA METERPRETERA!
+_______________________________________________________________________________________
+METERPRETER
+
+    Uzytkownicy w /home: Dave i Alex
+
+    Pliki na /dave/Desktop:
+    -ssh:
+        dave
+        Dav3therav3123
+
+    -key:
+        itscominghome
+        
+    -Servers:
+        DNS + Configurator - 192.168.122.4
+        Firewall - 192.168.122.5
+        The Vault - x
+                                        
