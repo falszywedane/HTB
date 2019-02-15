@@ -36,4 +36,75 @@ METERPRETER
         DNS + Configurator - 192.168.122.4
         Firewall - 192.168.122.5
         The Vault - x
-                                        
+______________________________________________________________________________________
+SSH 
+
+nc -z -v 192.168.122.5 1-1000 
+- brak otwartych portow
+
+nc -z -v 192.168.122.4 1-1000 
+Connection to 192.168.122.4 22 port [tcp/ssh] succeeded!
+Connection to 192.168.122.4 80 port [tcp/http] succeeded!      
+
+________________________________________________________________________________________
+WGET
+
+wget 192.168.122.4 
+dave@ubuntu:~/Public$ cat index.html 
+<h1> Welcome to the Sparklays DNS Server </h1>
+<p>
+<a href="dns-config.php">Click here to modify your DNS Settings</a><br>
+<a href="vpnconfig.php">Click here to test your VPN Configuration</a>
+
+
+dave@ubuntu:~/Public$ cat vpnconfig.php
+
+
+<!-- HTML form -->
+<html>
+<h1> VPN Configurator </h1><p>
+Here you can modify your .ovpn file and execute it.<p>
+Note: nobind must be used. <p>
+<form action="vpnconfig.php?function=testvpn" method="post">
+<textarea rows="10" cols="40" name="text"></textarea><p>
+<input type="submit" value="Update file">
+<input type="hidden" name="resulturl" value="google.com">
+
+<p>
+<a href="vpnconfig.php?function=testvpn" class="mybutton">Test VPN</a>
+</html>
+
+dave@ubuntu:~/Public$ cat vpnconfig.php\?function\=testvpn 
+executed succesfully!
+
+<!-- HTML form -->
+<html>
+<h1> VPN Configurator </h1><p>
+Here you can modify your .ovpn file and execute it.<p>
+Note: nobind must be used. <p>
+<form action="vpnconfig.php?function=testvpn" method="post">
+<textarea rows="10" cols="40" name="text"></textarea><p>
+<input type="submit" value="Update file">
+<input type="hidden" name="resulturl" value="google.com">
+
+<p>
+<a href="vpnconfig.php?function=testvpn" class="mybutton">Test VPN</a>
+</html>
+_______________________________________________________________________________________
+SSH
+
+netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 10.10.10.109:3333       10.10.15.17:57436       TIME_WAIT  
+tcp        0      0 10.10.10.109:ssh        10.10.15.17:48676       ESTABLISHED
+tcp        0      0 192.168.122.1:43436     192.168.122.4:http      TIME_WAIT  
+tcp        0      0 10.10.10.109:ssh        10.10.10.109:50704      ESTABLISHED  <<<< FORWARDING SSH?
+tcp        0      0 10.10.10.109:50704      10.10.10.109:ssh        ESTABLISHED  <<<< FORWARDING SSH?
+tcp        0      0 10.10.10.109:3333       10.10.15.17:57438       TIME_WAIT  
+tcp        0    200 10.10.10.109:ssh        10.10.14.132:58324      ESTABLISHED
+tcp        0      0 192.168.122.1:43434     192.168.122.4:http      ESTABLISHED
+tcp        0      0 10.10.10.109:3333       10.10.15.17:57440       TIME_WAIT  
+tcp        0      0 10.10.10.109:3333       10.10.15.17:57454       ESTABLISHED
+
+ 
