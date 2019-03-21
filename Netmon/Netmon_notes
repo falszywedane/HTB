@@ -81,4 +81,38 @@ msf files_dir
 [+] Found http://10.10.10.152:80/error.htm 200
 [+] Found http://10.10.10.152:80/index.htm 200
 
+______________________________________________________________________________________________
+FTP Enum
+______________________________________________________________________________________________
+cd ProgramData
+grep prtgadmin -r ./*
+"prtgadmin" -> default admin name on PRTG
+
+Found "PRTG Configuration.old.bak"
+    "
+        <dbpassword>
+	      <!-- User: prtgadmin -->
+	      PrTg@dmin2018
+            </dbpassword>
+    "
+
+______________________________________________________________________________________________
+HTTP Login
+______________________________________________________________________________________________
+http://10.10.10.152
+
+prtgadmin:PrTg@dmin2018  -->> INCORRECT
+prtgadmin:PrTg@dmin2019  -->> CORRECT!
+
+______________________________________________________________________________________________
+Using:
+https://www.codewatch.org/blog/?p=453
+
+Notofication --> Execute Program --> Demo outfile.ps1
+                 \/  \/  \/
+                 Parameter:
+
+    -- 
+
+root.txt
 
